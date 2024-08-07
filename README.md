@@ -1,4 +1,4 @@
-NIVI - A Virtual Assistant with AI
+SNIVI - A Virtual Assistant with AI
 Introduction
 Welcome to the NIVI repository! NIVI is an advanced virtual assistant powered by Artificial Intelligence (AI) that enables users to interact with their devices using only voice commands. Our goal is to provide a seamless, hands-free user experience, eliminating the need for keyboards or touch inputs.
 
