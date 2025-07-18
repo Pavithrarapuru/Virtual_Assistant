@@ -4,11 +4,11 @@
 
 Welcome to the NIVI repository! NIVI is an advanced virtual assistant powered by Artificial Intelligence (AI) that enables users to interact with their devices using only voice commands. Our aim is to provide a seamless, hands-free user experience, eliminating the need for keyboards or touch inputs.
 
-## Overview
+## Overview 
 
 NIVI leverages cutting-edge AI technologies, including natural language processing (NLP) and machine learning algorithms, to offer personalized assistance, task automation, and intuitive interaction. This repository contains the source code, documentation, and resources for the NIVI virtual assistant.
 
-## Features
+## Features 
 
 - **Voice Interaction**: Interact with the assistant using voice commands for hands-free operation and accessibility across devices.
 - **Integration**: Seamlessly integrates with various applications and services, including project management tools and chatbots.
