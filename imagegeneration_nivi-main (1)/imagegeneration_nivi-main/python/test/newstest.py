@@ -12,4 +12,7 @@ def news():
         formatted_article=f"{i}.{article['title']}\n{article['description']}"
         formatted_news.append(formatted_article)
     print(formatted_news)
+    print(formatted_news)
+    print(formatted_news)
+    
 news()
