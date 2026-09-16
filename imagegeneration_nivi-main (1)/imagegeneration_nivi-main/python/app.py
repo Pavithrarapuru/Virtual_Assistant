@@ -9,11 +9,13 @@ def home():
     return """
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NIVI | AI Voice Agent</title>
+    <title>NIVI — Virtual Assistant</title>
 
     <style>
 
@@ -25,66 +27,61 @@ def home():
 
         body {
             min-height: 100vh;
-            background:
-                radial-gradient(circle at 50% 20%, rgba(89, 66, 180, 0.18), transparent 35%),
-                radial-gradient(circle at 10% 90%, rgba(0, 210, 255, 0.08), transparent 30%),
-                #070910;
-
-            color: #f5f7ff;
-            font-family: Inter, -apple-system, BlinkMacSystemFont,
-                         "Segoe UI", sans-serif;
-
-            overflow-x: hidden;
+            font-family: Inter, Arial, sans-serif;
+            background: #08090d;
+            color: #ffffff;
+            overflow: hidden;
         }
 
-        /* ---------- BACKGROUND ---------- */
 
-        .grid {
+        /* Background */
+
+        .background {
             position: fixed;
             inset: 0;
 
-            background-image:
-                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-
-            background-size: 45px 45px;
-
-            mask-image: linear-gradient(
-                to bottom,
-                black,
-                transparent 90%
-            );
+            background:
+                radial-gradient(
+                    circle at 50% 42%,
+                    rgba(111, 78, 255, 0.18),
+                    transparent 28%
+                );
 
             pointer-events: none;
         }
 
-        /* ---------- NAVBAR ---------- */
+
+        /* Navigation */
 
         nav {
-            height: 75px;
+            height: 72px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 0 7%;
+            padding: 0 6%;
 
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-
-            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
-        .brand {
+
+        .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .brand-icon {
-            width: 38px;
-            height: 38px;
 
-            border-radius: 12px;
+        .logo-mark {
+            width: 34px;
+            height: 34px;
+
+            border-radius: 10px;
 
             display: flex;
             align-items: center;
@@ -92,43 +89,41 @@ def home():
 
             background: linear-gradient(
                 135deg,
-                #8b5cf6,
-                #06b6d4
+                #7657ff,
+                #4e8cff
             );
 
             font-weight: 800;
         }
 
-        .brand-name {
-            font-size: 21px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
 
-        .status {
+        .online {
             display: flex;
             align-items: center;
             gap: 8px;
 
-            font-size: 13px;
-            color: #a9b0c3;
+            color: #8d94a8;
+
+            font-size: 12px;
         }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
+
+        .dot {
+            width: 7px;
+            height: 7px;
 
             border-radius: 50%;
 
-            background: #39e58c;
+            background: #42e695;
 
-            box-shadow: 0 0 12px #39e58c;
+            box-shadow: 0 0 10px #42e695;
         }
 
-        /* ---------- HERO ---------- */
 
-        .hero {
-            min-height: calc(100vh - 75px);
+        /* Main */
+
+        main {
+            height: calc(100vh - 72px);
 
             display: flex;
             flex-direction: column;
@@ -136,111 +131,101 @@ def home():
 
             text-align: center;
 
-            padding: 70px 20px 50px;
-
-            position: relative;
+            padding-top: 70px;
         }
 
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
 
-            padding: 8px 14px;
+        .welcome {
+            font-size: 13px;
 
-            border: 1px solid rgba(139,92,246,0.35);
+            color: #858ca0;
 
-            border-radius: 999px;
-
-            color: #bca9ff;
-
-            background: rgba(139,92,246,0.08);
-
-            font-size: 12px;
-
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
 
             text-transform: uppercase;
         }
 
+
         h1 {
-            margin-top: 25px;
+            margin-top: 15px;
 
-            font-size: clamp(42px, 7vw, 82px);
+            font-size: clamp(42px, 6vw, 72px);
 
-            line-height: 1;
+            letter-spacing: -3px;
 
-            letter-spacing: -4px;
+            font-weight: 700;
         }
 
-        .gradient-text {
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #b9a5ff,
-                #67e8f9
-            );
 
-            -webkit-background-clip: text;
-            color: transparent;
-        }
+        .description {
+            margin-top: 16px;
 
-        .subtitle {
-            max-width: 700px;
+            max-width: 520px;
 
-            margin-top: 22px;
-
-            color: #9da5bb;
-
-            font-size: 17px;
+            color: #858ca0;
 
             line-height: 1.7;
+
+            font-size: 15px;
         }
 
-        /* ---------- AI ORB ---------- */
 
-        .orb-container {
+        /* AI Core */
+
+        .core-wrapper {
             position: relative;
 
             width: 250px;
             height: 250px;
 
-            margin: 55px auto 30px;
+            margin-top: 42px;
 
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .orb-ring {
+
+        .circle {
             position: absolute;
 
             border-radius: 50%;
 
-            border: 1px solid rgba(139,92,246,0.35);
-
-            animation: rotate 8s linear infinite;
+            border: 1px solid rgba(
+                125,
+                91,
+                255,
+                0.25
+            );
         }
 
-        .ring-one {
-            width: 245px;
-            height: 245px;
+
+        .circle.one {
+            width: 250px;
+            height: 250px;
+
+            animation: rotate 12s linear infinite;
         }
 
-        .ring-two {
-            width: 210px;
-            height: 210px;
 
-            border-color: rgba(34,211,238,0.35);
+        .circle.two {
+            width: 205px;
+            height: 205px;
 
-            animation-direction: reverse;
+            border-color: rgba(
+                75,
+                140,
+                255,
+                0.25
+            );
 
-            animation-duration: 6s;
+            animation: rotateReverse 9s linear infinite;
         }
 
-        .orb {
-            width: 145px;
-            height: 145px;
+
+        .core {
+            width: 125px;
+            height: 125px;
 
             border-radius: 50%;
 
@@ -248,30 +233,34 @@ def home():
                 radial-gradient(
                     circle at 35% 30%,
                     #ffffff,
-                    #b99aff 10%,
-                    #714cff 35%,
-                    #16102f 70%
+                    #a995ff 12%,
+                    #7055ff 38%,
+                    #18122e 72%
                 );
 
             box-shadow:
-                0 0 35px rgba(139,92,246,0.7),
-                0 0 100px rgba(99,102,241,0.35),
-                inset 0 0 30px rgba(255,255,255,0.25);
+                0 0 35px rgba(112,85,255,0.55),
+                0 0 90px rgba(112,85,255,0.2);
 
-            animation: breathe 3s ease-in-out infinite;
+            animation: pulse 3s ease-in-out infinite;
         }
 
-        @keyframes breathe {
+
+        @keyframes pulse {
+
             0%,100% {
                 transform: scale(1);
             }
 
             50% {
-                transform: scale(1.08);
+                transform: scale(1.07);
             }
+
         }
 
+
         @keyframes rotate {
+
             from {
                 transform: rotate(0deg);
             }
@@ -279,388 +268,329 @@ def home():
             to {
                 transform: rotate(360deg);
             }
+
         }
 
-        /* ---------- VOICE BUTTON ---------- */
 
-        .voice-button {
-            border: none;
+        @keyframes rotateReverse {
 
-            width: 70px;
-            height: 70px;
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+
+        }
+
+
+        /* Microphone */
+
+        .mic {
+            position: absolute;
+
+            bottom: -5px;
+
+            width: 62px;
+            height: 62px;
 
             border-radius: 50%;
 
-            background: linear-gradient(
-                135deg,
-                #8b5cf6,
-                #6366f1
+            border: 1px solid rgba(
+                255,
+                255,
+                255,
+                0.12
+            );
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.06
             );
 
             color: white;
 
-            font-size: 25px;
+            font-size: 23px;
 
             cursor: pointer;
 
-            box-shadow: 0 15px 40px rgba(99,102,241,0.3);
+            backdrop-filter: blur(15px);
 
             transition: 0.25s;
         }
 
-        .voice-button:hover {
-            transform: translateY(-4px) scale(1.05);
 
-            box-shadow:
-                0 20px 50px rgba(99,102,241,0.45);
+        .mic:hover {
+
+            transform: scale(1.08);
+
+            background: rgba(
+                118,
+                87,
+                255,
+                0.2
+            );
+
+            border-color: rgba(
+                118,
+                87,
+                255,
+                0.5
+            );
+
         }
 
-        .voice-label {
-            margin-top: 13px;
 
-            color: #8991a8;
+        .instruction {
 
-            font-size: 13px;
-        }
+            margin-top: 25px;
 
-        /* ---------- CAPABILITIES ---------- */
-
-        .capabilities {
-            width: min(950px, 100%);
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 14px;
-
-            margin-top: 65px;
-        }
-
-        .card {
-            padding: 22px;
-
-            text-align: left;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.018)
-                );
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            border-radius: 18px;
-
-            backdrop-filter: blur(20px);
-
-            transition: 0.25s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-
-            border-color:
-                rgba(139,92,246,0.45);
-
-            background:
-                rgba(139,92,246,0.08);
-        }
-
-        .card-icon {
-            font-size: 23px;
-
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            font-size: 14px;
-
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            color: #858da4;
+            color: #70778b;
 
             font-size: 12px;
 
-            line-height: 1.6;
+            letter-spacing: 0.4px;
         }
 
-        /* ---------- AGENT PIPELINE ---------- */
 
-        .architecture {
-            width: min(950px, 100%);
+        /* Features */
 
-            margin-top: 45px;
+        .features {
 
-            padding: 22px;
+            display: flex;
 
-            border-radius: 18px;
+            gap: 10px;
 
-            border: 1px solid rgba(255,255,255,0.07);
-
-            background: rgba(255,255,255,0.025);
-
-            color: #858da4;
-
-            font-size: 12px;
-
-            letter-spacing: 0.5px;
+            margin-top: 32px;
         }
 
-        .architecture span {
-            color: #c4b5fd;
-        }
 
-        /* ---------- FOOTER ---------- */
+        .feature {
 
-        footer {
-            margin-top: 55px;
+            padding: 9px 15px;
 
-            color: #626a80;
+            border-radius: 20px;
+
+            border: 1px solid rgba(
+                255,
+                255,
+                255,
+                0.07
+            );
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.025
+            );
+
+            color: #858ca0;
 
             font-size: 11px;
+        }
+
+
+        /* Footer */
+
+        footer {
+
+            position: fixed;
+
+            bottom: 22px;
+
+            left: 0;
+            right: 0;
+
+            text-align: center;
+
+            color: #454b5c;
+
+            font-size: 10px;
 
             letter-spacing: 1px;
         }
 
-        /* ---------- RESPONSIVE ---------- */
 
-        @media(max-width: 750px) {
+        /* Mobile */
+
+        @media(max-width: 600px) {
+
+            main {
+                padding: 55px 20px 0;
+            }
 
             h1 {
-                letter-spacing: -2px;
+                font-size: 46px;
             }
 
-            .capabilities {
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .description {
+                font-size: 14px;
             }
 
-            .orb-container {
-                margin-top: 40px;
-            }
-        }
-
-        @media(max-width: 450px) {
-
-            .capabilities {
-                grid-template-columns: 1fr;
+            .features {
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            nav {
-                padding: 0 5%;
-            }
-
-            .subtitle {
-                font-size: 15px;
-            }
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-<div class="grid"></div>
+
+<div class="background"></div>
+
 
 <nav>
 
-    <div class="brand">
+    <div class="logo">
 
-        <div class="brand-icon">
+        <div class="logo-mark">
             N
         </div>
 
-        <div class="brand-name">
-            NIVI
-        </div>
+        NIVI
 
     </div>
 
-    <div class="status">
 
-        <div class="status-dot"></div>
+    <div class="online">
 
-        AI AGENT ONLINE
+        <span class="dot"></span>
+
+        Online
 
     </div>
 
 </nav>
 
 
-<section class="hero">
 
-    <div class="eyebrow">
-        ◉ Autonomous Voice Intelligence
+<main>
+
+
+    <div class="welcome">
+        Your Personal Assistant
     </div>
 
 
     <h1>
-
-        Meet <span class="gradient-text">NIVI</span>
-
+        Hello, I'm NIVI.
     </h1>
 
 
-    <p class="subtitle">
+    <p class="description">
 
-        A voice-first AI agent designed to understand natural language,
-        reason with LLMs, interact with tools, and assist users through
-        intelligent conversations.
+        A voice-based virtual assistant designed to
+        understand your requests, answer questions,
+        and help you get things done.
 
     </p>
 
 
-    <div class="orb-container">
 
-        <div class="orb-ring ring-one"></div>
+    <div class="core-wrapper">
 
-        <div class="orb-ring ring-two"></div>
+        <div class="circle one"></div>
 
-        <div class="orb"></div>
+        <div class="circle two"></div>
+
+        <div class="core"></div>
+
+
+        <button
+            class="mic"
+            onclick="listen()"
+            aria-label="Talk to NIVI"
+        >
+
+            🎙
+
+        </button>
 
     </div>
 
 
-    <button
-        class="voice-button"
-        onclick="startListening()"
-        title="Talk to NIVI"
+    <div
+        class="instruction"
+        id="status"
     >
 
-        🎙
-
-    </button>
-
-
-    <div class="voice-label" id="voiceStatus">
-
-        Tap to talk with NIVI
+        Tap the microphone to talk
 
     </div>
 
 
-    <div class="capabilities">
 
-        <div class="card">
+    <div class="features">
 
-            <div class="card-icon">🧠</div>
-
-            <h3>LLM Reasoning</h3>
-
-            <p>
-                Understands context and generates
-                intelligent responses using large
-                language models.
-            </p>
-
+        <div class="feature">
+            Voice Interaction
         </div>
 
-
-        <div class="card">
-
-            <div class="card-icon">🎙</div>
-
-            <h3>Voice Interaction</h3>
-
-            <p>
-                Designed for natural voice-based
-                interaction instead of traditional
-                text-only interfaces.
-            </p>
-
+        <div class="feature">
+            Smart Responses
         </div>
 
-
-        <div class="card">
-
-            <div class="card-icon">⚡</div>
-
-            <h3>AI Agent</h3>
-
-            <p>
-                Connects reasoning with tools and
-                actions to perform useful tasks.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🔗</div>
-
-            <h3>Tool Integration</h3>
-
-            <p>
-                Built to connect external services,
-                automation workflows and APIs.
-            </p>
-
+        <div class="feature">
+            Task Assistance
         </div>
 
     </div>
 
 
-    <div class="architecture">
-
-        <span>VOICE</span>
-        &nbsp;→&nbsp;
-        <span>UNDERSTANDING</span>
-        &nbsp;→&nbsp;
-        <span>LLM</span>
-        &nbsp;→&nbsp;
-        <span>AGENT</span>
-        &nbsp;→&nbsp;
-        <span>TOOLS</span>
-        &nbsp;→&nbsp;
-        <span>RESPONSE</span>
-
-    </div>
+</main>
 
 
-    <footer>
 
-        NIVI • AI Voice Agent • FastAPI Backend
+<footer>
 
-    </footer>
+    NIVI • Virtual Assistant
 
-</section>
+</footer>
+
 
 
 <script>
 
-function startListening() {
+function listen() {
 
     const status =
-        document.getElementById("voiceStatus");
+        document.getElementById("status");
 
     status.innerText =
-        "Listening... speak to NIVI";
+        "Listening...";
 
-    setTimeout(() => {
+    setTimeout(function() {
 
         status.innerText =
-            "Voice interface ready";
+            "I'm ready to help.";
 
-    }, 3000);
+    }, 2500);
 
 }
 
 </script>
 
+
 </body>
+
 </html>
 """
 
 
 @app.get("/health")
 def health():
+
     return {
         "status": "healthy",
-        "service": "NIVI AI Voice Agent"
+        "service": "NIVI"
     }
